@@ -6,6 +6,16 @@ readme = "README.md"
 authors = [{ name = "Christophe Donnat", email = "christophe@donnat.dev" }]
 requires-python = ">=3.12"
 dependencies = []
+license = 'MIT'
+license-files = ["LICENSE"]
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = 'https://github.com/donnatchris/python0'
+Issues = 'https://github.com/donnatchris/python0/issues'
 
 [build-system]
 requires = ["uv_build>=0.12.21,<0.13.0"]
