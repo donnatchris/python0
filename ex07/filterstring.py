@@ -1,13 +1,11 @@
 import sys
 
 
-ARG_ERROR = "the arguments are bad"
-
-
 def main() -> None:
     """
     Filter words from a given text based on their length.
     """
+    ARG_ERROR = "the arguments are bad"
     args = sys.argv
     try:
         assert len(args) == 3, ARG_ERROR

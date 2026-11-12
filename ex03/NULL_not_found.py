@@ -1,21 +1,21 @@
 from typing import Any
-import math
-import numbers
+
 
 def NULL_not_found(object: Any) -> int:
-	if object is None:
-		print(f"Nothing: {object} {type(object)}")
-	elif isinstance(object, float) and math.isnan(object):
-		print(f"Cheese: {object} {type(object)}")
-	elif isinstance(object, numbers.Number) and not isinstance(object, bool) and object == 0:
-		print(f"Zero: {object} {type(object)}")
-	elif isinstance(object, bool) and object == False:
-		print(f"Fake: {object} {type(object)}")
-	elif isinstance(object, str) and object == "":
-		print(f"Empty: {type(object)}")
-	else:
-		print("Type not Found.")
-	return 1
+    if object is None:
+        print(f"Nothing: {object} {type(object)}")
+    elif isinstance(object, float) and object != object:
+        print(f"Cheese: {object} {type(object)}")
+    elif type(object) is int and object == 0:
+        print(f"Zero: {object} {type(object)}")
+    elif isinstance(object, str) and object == "":
+        print(f"Empty: {type(object)}")
+    elif object is False:
+        print(f"Fake: {object} {type(object)}")
+    else:
+        print("Type not Found")
+        return 1
+    return 0
 
 
 # Nothing = None

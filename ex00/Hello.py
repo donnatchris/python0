@@ -8,7 +8,6 @@ ft_list.append("World!")
 ft_tuple = ft_tuple[:1] + ("France!",)
 ft_set.discard("tutu!")
 ft_set.add("Paris!")
-ft_set = set(sorted(ft_set))
 ft_dict["Hello"] = "42Paris!"
 
 

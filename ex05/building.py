@@ -50,7 +50,7 @@ def main() -> None:
     try:
         args_cont = len(sys.argv)
         text = ""
-        if args_cont == 1:
+        if args_cont == 1 or (args_cont == 2 and sys.argv[1] == ""):
             print("What is the text to count?")
             text = sys.stdin.readline()
         else:

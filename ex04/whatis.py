@@ -1,25 +1,27 @@
 import sys
 
+
 def whatis(number: int) -> str:
-	return "I'm Even." if number % 2 == 0 else "I'm Odd."
+    return "I'm Even." if number % 2 == 0 else "I'm Odd."
+
 
 def main():
-	args_count = len(sys.argv)
-	if args_count == 1:
-		return
-	assert args_count == 2, "more than one argument is provided"
-	try:
-		number = int(sys.argv[1])
-	except ValueError:
-		raise AssertionError("argument is not an integer") from None
-	print(whatis(number))
+    args_count = len(sys.argv)
+    if args_count == 1:
+        return
+    assert args_count == 2, "more than one argument is provided"
+    try:
+        number = int(sys.argv[1])
+    except ValueError:
+        raise AssertionError("argument is not an integer") from None
+    print(whatis(number))
 
 
 if __name__ == "__main__":
-	try:
-		main()
-	except AssertionError as error:
-		print(f"AssertionError: {error}")
+    try:
+        main()
+    except AssertionError as error:
+        print(f"AssertionError: {error}")
 
 
 # Expected output:

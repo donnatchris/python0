@@ -1,48 +1,14 @@
 import sys
 
 
-ARG_ERROR = "the arguments are bad"
+def arg_error() -> str:
+    """
+    Return a standardized error message for bad arguments.
 
-
-NESTED_MORSE = {
-    " ": "/ ",
-    "A": ".- ",
-    "B": "-... ",
-    "C": "-.-. ",
-    "D": "-.. ",
-    "E": ". ",
-    "F": "..-. ",
-    "G": "--. ",
-    "H": ".... ",
-    "I": ".. ",
-    "J": ".--- ",
-    "K": "-.- ",
-    "L": ".-.. ",
-    "M": "-- ",
-    "N": "-. ",
-    "O": "--- ",
-    "P": ".--. ",
-    "Q": "--.- ",
-    "R": ".-. ",
-    "S": "... ",
-    "T": "- ",
-    "U": "..- ",
-    "V": "...- ",
-    "W": ".-- ",
-    "X": "-..- ",
-    "Y": "-.-- ",
-    "Z": "--.. ",
-    "0": "----- ",
-    "1": ".---- ",
-    "2": "..--- ",
-    "3": "...-- ",
-    "4": "....- ",
-    "5": "..... ",
-    "6": "-.... ",
-    "7": "--... ",
-    "8": "---.. ",
-    "9": "----. ",
-}
+    Returns:
+        str: The error message.
+    """
+    return "the arguments are bad"
 
 
 def text_to_morse(text: str) -> str:
@@ -59,11 +25,51 @@ def text_to_morse(text: str) -> str:
         AssertionError:
         If the text contains characters that cannot be converted to Morse code.
     """
+    NESTED_MORSE = {
+        " ": "/ ",
+        "A": ".- ",
+        "B": "-... ",
+        "C": "-.-. ",
+        "D": "-.. ",
+        "E": ". ",
+        "F": "..-. ",
+        "G": "--. ",
+        "H": ".... ",
+        "I": ".. ",
+        "J": ".--- ",
+        "K": "-.- ",
+        "L": ".-.. ",
+        "M": "-- ",
+        "N": "-. ",
+        "O": "--- ",
+        "P": ".--. ",
+        "Q": "--.- ",
+        "R": ".-. ",
+        "S": "... ",
+        "T": "- ",
+        "U": "..- ",
+        "V": "...- ",
+        "W": ".-- ",
+        "X": "-..- ",
+        "Y": "-.-- ",
+        "Z": "--.. ",
+        "0": "----- ",
+        "1": ".---- ",
+        "2": "..--- ",
+        "3": "...-- ",
+        "4": "....- ",
+        "5": "..... ",
+        "6": "-.... ",
+        "7": "--... ",
+        "8": "---.. ",
+        "9": "----. ",
+    }
+
     morse: list[str] = []
     for char in text:
         morse_char = NESTED_MORSE.get(char.upper())
         if morse_char is None:
-            raise AssertionError(ARG_ERROR)
+            raise AssertionError(arg_error())
         morse.append(morse_char)
     return "".join(morse)[:-1]
 
@@ -75,7 +81,7 @@ def main() -> None:
     Print an error message if the arguments are bad.
     """
     try:
-        assert len(sys.argv) == 2, ARG_ERROR
+        assert len(sys.argv) == 2, arg_error()
         print(text_to_morse(sys.argv[1]))
     except AssertionError as error:
         print(f"AssertionError: {error}")
